@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>JavaScript Basics with JSON Format</title>
+        <link rel="stylesheet" href="jsoncss.css" type="text/css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            var data = {"Adventure": [
+                    {
+                        "place": "Do you like dogs or cats",
+                        "option1": {
+                            "text": "dog",
+                            "value": 1},
+                        "option2": {"text": "cat",
+                            "value": 2}
+
+                    },
+                    {
+                        "place": "Dogs are better. Do you have a dog",
+                        "option1": {
+                            "text": "yes",
+                            "value": 3},
+                        "option2": {"text": "no",
+                            "value": 0}
+
+                    },
+                    {
+                        "place": "i dont like cats. do you have one",
+                        "option1": {
+                            "text": "yes",
+                            "value": 3},
+                        "option2": {"text": "no",
+                            "value": 0}
+
+                    },
+                    {
+                        "place": "whats your gender",
+                        "option1": {
+                            "text": "male",
+                            "value": 0},
+                        "option2": {"text": "female",
+                            "value": 0}
+
+                    }
+                ]}
+            var choice = 0;
+            function adventureOn(choice) {
+                document.getElementById("placeholder").innerHTML = "<form><p>" + data.Adventure[choice].place + "</p><p> "
+                        + "<input type=\"radio\" value=\"" + data.Adventure[choice].option1.value + "\" onchange=\"adventureOn(this.value)\">"
+                        + data.Adventure[choice].option1.text 
+                        + "<br><input type=\"radio\" value=\"" + data.Adventure[choice].option2.value + "\" onchange=\"adventureOn(this.value)\">"
+                        +data.Adventure[choice].option2.text;
+            }
+        </script>
+    </head>
+    <body>
+
+        <div id="placeholder">
+            <form>
+                <p>Start here</p>
+                <p>
+                    <input type="radio" value="0" onchange="adventureOn(this.value)">Start
+                </p>
+            </form>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Book List</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="BookList.js" type="text/javascript"></script>
+        <script>
+                function books(){
+                    var i = 0;
+                    var length = Books.length;
+                    var text="List of Cool Books";
+                    while(i<length){
+                       text += 
+                         "<ul><li><ul><li><b>"+Books[i].Title+"</b></li>"+
+                            "<li>"+Books[i].Author+"</li>"+
+                            "<li>Price: "+Books[i].Price+"</li>";
+                    
+                    if(Books[i].Awards instanceof Array){
+                        
+                        text+="<li>Awards: <ul>";
+                        var length2 = Books[i].Awards.length;
+                        var j = 0;
+                        while(j<length2){
+                        
+                        text+= "<li> "+Books[i].Awards[j]+"</li>";
+                        j++;
+                    }
+                    text+="</ul></li>";
+                }
+                           text+="</li></ul></ul>";
+                        i++;
+                    }
+                    document.getElementById("area").innerHTML = text;
+                }
+            </script>
+    </head>
+    <body onload="books()">
+        <div id="area"></div>
+    </body>
+</html>

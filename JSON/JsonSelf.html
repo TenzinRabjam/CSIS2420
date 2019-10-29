@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>JSON Complex Self</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            var data = {
+                    
+                    "Name":"Aaron Templeton",
+                    "Age":24,
+                    "Married":true,
+                    "classes":["2470", "1410", "Calculus 2" ],
+                    "hobbies":{
+                        "hobby1":"skiing. i've skied for a long time. I go to Brighton Ski Resort.\n\
+                                    it is fun especially when i go with my cousins",
+                        "hobby2":"snowmobiling. i have snowmobiles at my cabin. I love to snowmobile",
+                        "hobby3":"i play a lot of video games. I have an xbox"
+                    }
+                        
+                    };
+                function jsondata(){
+                    if(data.Married===true){
+                        var marriedText = "Yes, I am married.";
+                    }else{
+                        marriedText="No, I am not married";
+                    }
+                    document.getElementById("self").innerHTML="Name: "+data.Name+
+                            "<br>Married: "+marriedText + "<br>Age: "+data.Age+
+                            "<br>Favorite Class: "+data.classes[0]
+                            +"<br>Hobby: "+data.hobbies.hobby1;
+                }
+            
+            
+        </script>    
+    </head>
+    <body onload="jsondata()">
+        <div id="self"></div>
+    </body>
+</html>
